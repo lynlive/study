@@ -1,0 +1,12 @@
+1.数据的传播机制
+事务是指一系列的操作，必须所有操作成功完成才算完成，否则任意操作失败所有修改奖杯撤销。
+Spring事务机制包括声明式事务和编程式事务。
+声明式事务使得我们无需关注获取事务连接，关闭连接、事务提交和回滚等这些操作。
+spring在TransactionDefinition接口中定义了七个事务传播行为
+propagation_requierd：如果当前没有事务，就新建一个事务，如果已存在一个事务中，加入到这个事务中，这是最常见的选择。
+propagation_supports：支持当前事务，如果没有当前事务，就以非事务方法执行。
+propagation_mandatory：使用当前事务，如果没有当前事务，就抛出异常。
+propagation_required_new：新建事务，如果当前存在事务，把当前事务挂起。
+propagation_not_supported：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。
+propagation_never：以非事务方式执行操作，如果当前事务存在则抛出异常。
+propagation_nested：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与propagation_required类似的操作
