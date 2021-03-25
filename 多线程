@@ -1,0 +1,14 @@
+1.synchronize
+CAS 
+  compare and swap
+  compare and exchange
+CAS底层实现
+
+对象的内存布局
+markword的细节
+
+2.synchronize的底层实现
+锁的升级过程
+  C++代码和汇编
+锁消除
+锁粗化
